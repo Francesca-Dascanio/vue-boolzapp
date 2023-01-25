@@ -122,7 +122,7 @@
                         <main>
                             <div class="conversation-container">
                                 <!-- singolo messaggio -->
-                                <div class="message-container" v-for="(element, indexMessage) in contacts[active].messages" :class="element.status = 'sent' ? 'sent' : 'received' ">
+                                <div class="message-container" v-for="(element, indexMessage) in contacts[active].messages" :class="element.status == 'sent' ? 'sent' : 'received' ">
                                     <div class="message-content">
                                         {{ element.message }}
                                     </div>
