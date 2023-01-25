@@ -63,112 +63,12 @@
                                 <ul>
                                     <li>
                                         <hr>
-                                        <div class="single-chat">
+                                        <div class="single-chat" v-for="(contact, index) in contacts">
                                             <div class="avatar">
-                                                <img src="img/avatar_1.jpg" alt="avatar-1">
+                                                <img :src=" 'img/avatar' + contact.avatar + '.jpg'"  :alt="contacts[index]">
                                                 <div class="info-avatar">
                                                     <div class="avatar-name">
-                                                        Nome amico 
-                                                    </div>
-                                                    <div class="avatar-message">
-                                                        Ultimo messaggio
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="message-time">
-                                                12:00
-                                            </div>
-                                        </div>  
-                                    </li>
-
-                                    <li>
-                                        <hr>
-                                        <div class="single-chat">
-                                            <div class="avatar">
-                                                <img src="img/avatar_1.jpg" alt="avatar-1">
-                                                <div class="info-avatar">
-                                                    <div class="avatar-name">
-                                                        Nome amico 
-                                                    </div>
-                                                    <div class="avatar-message">
-                                                        Ultimo messaggio
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="message-time">
-                                                12:00
-                                            </div>
-                                        </div>  
-                                    </li>
-
-                                    <li>
-                                        <hr>
-                                        <div class="single-chat">
-                                            <div class="avatar">
-                                                <img src="img/avatar_1.jpg" alt="avatar-1">
-                                                <div class="info-avatar">
-                                                    <div class="avatar-name">
-                                                        Nome amico 
-                                                    </div>
-                                                    <div class="avatar-message">
-                                                        Ultimo messaggio
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="message-time">
-                                                12:00
-                                            </div>
-                                        </div>  
-                                    </li>
-
-                                    <li>
-                                        <hr>
-                                        <div class="single-chat">
-                                            <div class="avatar">
-                                                <img src="img/avatar_1.jpg" alt="avatar-1">
-                                                <div class="info-avatar">
-                                                    <div class="avatar-name">
-                                                        Nome amico 
-                                                    </div>
-                                                    <div class="avatar-message">
-                                                        Ultimo messaggio
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="message-time">
-                                                12:00
-                                            </div>
-                                        </div>  
-                                    </li>
-
-                                    <li>
-                                        <hr>
-                                        <div class="single-chat">
-                                            <div class="avatar">
-                                                <img src="img/avatar_1.jpg" alt="avatar-1">
-                                                <div class="info-avatar">
-                                                    <div class="avatar-name">
-                                                        Nome amico 
-                                                    </div>
-                                                    <div class="avatar-message">
-                                                        Ultimo messaggio
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="message-time">
-                                                12:00
-                                            </div>
-                                        </div>  
-                                    </li>
-
-                                    <li>
-                                        <hr>
-                                        <div class="single-chat">
-                                            <div class="avatar">
-                                                <img src="img/avatar_1.jpg" alt="avatar-1">
-                                                <div class="info-avatar">
-                                                    <div class="avatar-name">
-                                                        Nome amico 
+                                                        {{ contact.name }}
                                                     </div>
                                                     <div class="avatar-message">
                                                         Ultimo messaggio
