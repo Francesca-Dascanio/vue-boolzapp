@@ -63,9 +63,9 @@
                                 <ul>
                                     <li>
                                         <hr>
-                                        <div class="single-chat" v-for="(contact, index) in contacts">
+                                        <div class="single-chat" v-for="(contact, indexSingleChat) in contacts" :class="indexSingleChat == active ? 'active': ''" @click="active = indexSingleChat">
                                             <div class="avatar">
-                                                <img :src=" 'img/avatar' + contact.avatar + '.jpg'"  :alt="contacts[index]">
+                                                <img :src=" 'img/avatar' + contact.avatar + '.jpg'"  :alt="contacts[indexSingleChat]">
                                                 <div class="info-avatar">
                                                     <div class="avatar-name">
                                                         {{ contact.name }}
@@ -85,13 +85,13 @@
                         </main>
                     </section>
 
-                    <section id="section-2">
+                    <section id="section-2" >
                         <header>
                             <div id="clicked-avatar">
-                                <img src="img/avatar_1.jpg" alt="avatar-1">
+                                <img :src="'img/avatar' + contacts[active].avatar + '.jpg'" :alt="contacts[active]">
                                 <div class="info-clicked-avatar">
                                     <div class="clicked-avatar-name">
-                                        Nome amico 
+                                         {{ contacts[active].name }}
                                     </div>
                                     <div class="clicked-avatar-message">
                                         Ultimo accesso
@@ -121,68 +121,25 @@
                         </header>
                         <main>
                             <div class="conversation-container">
-                                <div class="message-container sent">
+                                <!-- singolo messaggio -->
+                                <div class="message-container" v-for="(element, indexMessage) in contacts[active].messages" :class="element.status = 'sent' ? 'sent' : 'received' ">
                                     <div class="message-content">
-                                        message
+                                        {{ element.message }}
                                     </div>
                                     <div class="time">
-                                        time
+                                        {{ element.date }}
                                     </div>
                                 </div>
 
-                                <div class="message-container received">
+                                <!-- <div class="message-container received">
                                     <div class="message-content">
                                         message
                                     </div>
                                     <div class="time">
                                         time
                                     </div>
-                                </div>
-
-                                <div class="message-container sent">
-                                    <div class="message-content">
-                                        message
-                                    </div>
-                                    <div class="time">
-                                        time
-                                    </div>
-                                </div>
-
-                                <div class="message-container sent">
-                                    <div class="message-content">
-                                        message
-                                    </div>
-                                    <div class="time">
-                                        time
-                                    </div>
-                                </div>
-
-                                <div class="message-container sent">
-                                    <div class="message-content">
-                                        message
-                                    </div>
-                                    <div class="time">
-                                        time
-                                    </div>
-                                </div>
-
-                                <div class="message-container sent">
-                                    <div class="message-content">
-                                        message
-                                    </div>
-                                    <div class="time">
-                                        time
-                                    </div>
-                                </div>
-
-                                <div class="message-container sent">
-                                    <div class="message-content">
-                                        message
-                                    </div>
-                                    <div class="time">
-                                        time
-                                    </div>
-                                </div>
+                                </div> -->
+                                
                             </div>
                         </main>
                         <footer>
