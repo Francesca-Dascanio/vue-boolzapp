@@ -27,6 +27,10 @@
     background: linear-gradient(360deg, rgba(218,219,211,1) 56%, rgba(0,153,136,1) 56%);
 }
 
+.active {
+    background-color: rgba(0, 0, 0, 0.1);
+}
+
 /* REGOLE MAIN */
 .internal-container {
     max-width: 1300px;
