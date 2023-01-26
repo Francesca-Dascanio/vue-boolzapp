@@ -63,7 +63,7 @@
                             <div id="list-contacts">
                                 <ul>
                                     <!--Prova vecchia con aggiunta :class="contact.visible == true ? '' : 'not-visible'" -->
-                                    <li v-for="(contact, indexSingleChat) in contacts" :class="indexSingleChat == active ? 'active': ''" @click="active = indexSingleChat">
+                                    <li v-for="(contact, indexSingleChat) in contactsList" :class="indexSingleChat == active ? 'active': ''" @click="active = indexSingleChat">
                                         <hr>
                                         <div class="single-chat">
                                             <div class="avatar">

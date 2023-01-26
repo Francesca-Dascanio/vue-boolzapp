@@ -227,43 +227,16 @@ createApp({
 
     },
     computed: {
-        
-        getName () {
 
-            // Creo array di tutti i nomi 
-            const arrayNomi = [];
-            
-
-            for (let i = 0; i < this.contacts.length; i++) {
-
-                arrayNomi.push(this.contacts[i].name);
-
+        // Non funziona caseSensitive
+        contactsList () {
+            if(this.inputSearch.length > 0) {
+                return this.contacts.filter((contact) => contact.name.toLowerCase().includes(this.inputSearch))
             }
-
-            console.log(arrayNomi);
-
-            // Faccio ciclare arrayNomi; se inputSearch è vuoto allora restituisci tutti i nomi dell'array
-            // Altrimenti restituisci array Filtrato
-            for (let i = 0; i < arrayNomi.length; i++) {
-
-                if (this.inputSearch == '') {
-                   console.log(arrayNomi[i]);
-                   return arrayNomi[i];
-                }
-                else {
-
-                    const arrayFiltrato = arrayNomi.filter(name => name.includes(this.inputSearch));
-                
-                    for (let i = 0; i < arrayFiltrato.length; i++) {
-
-                    console.log(arrayFiltrato[i]);
-        
-                }
-                }
-            }
-            
+            return this.contacts
 
         }
+
     }
 }).mount('#app')
 
