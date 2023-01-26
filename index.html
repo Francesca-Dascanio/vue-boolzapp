@@ -147,8 +147,8 @@
                                 <i class="fa-regular fa-face-smile"></i>
                             </div>
                             <div class="write-message">
-                                <form action="">
-                                    <input type="text" placeholder="Scrivi un messaggio">
+                                <form action="" @submit.prevent="addInput(active)">
+                                    <input type="text" placeholder="Scrivi un messaggio" v-model="inputText">
                                 </form>
                             </div>
                             <div>

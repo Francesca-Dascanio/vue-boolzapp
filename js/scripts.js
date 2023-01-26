@@ -4,6 +4,7 @@ createApp({
 
     data() {
         return {
+            inputText: '',
             active: 0,
             contacts: [
                 {
@@ -178,7 +179,17 @@ createApp({
 
     },
     methods: {
+        addInput: function (active) {
 
+            const newMessage = {
+                date: '10/01/2020 15:51:00',
+                message: this.inputText,
+                status: 'sent'
+            }
+
+           this.contacts[active].messages.push(newMessage);
+
+        }
     }
 }).mount('#app')
 
