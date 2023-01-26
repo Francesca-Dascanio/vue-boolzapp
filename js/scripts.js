@@ -181,14 +181,14 @@ createApp({
     methods: {
         addInput: function (active) {
 
-            const newMessage = {
-                date: '10/01/2020 15:51:00',
-                message: this.inputText,
-                status: 'sent'
-            }
+            if (this.inputText != '') {
+                const newMessage = {
+                    date: '10/01/2020 15:51:00',
+                    message: this.inputText,
+                    status: 'sent'
+                }
 
-
-            // Push 
+                // Push 
             this.contacts[active].messages.push(newMessage);
 
 
@@ -197,8 +197,7 @@ createApp({
             setTimeout (() => {
                 this.addAnswer(active)
             }, 1000);
-
-
+            }
 
         },
         addAnswer: function (active) {
