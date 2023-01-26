@@ -57,13 +57,13 @@
                                 </div>
                             </div>
                             <div id="search">
-                                <input type="search" placeholder="Cerca o inizia una nuova chat" v-model="inputSearch">
+                                <input type="search" placeholder="Cerca o inizia una nuova chat" v-model="inputSearch" @onchange="searchContacts(active)">
                             </div>
                             <div id="list-contacts">
                                 <ul>
                                     <li>
                                         <hr>
-                                        <div class="single-chat" v-for="(contact, indexSingleChat) in contacts" :class="indexSingleChat == active ? 'active': ''" @click="active = indexSingleChat">
+                                        <div class="single-chat" v-for="(contact, indexSingleChat) in contacts" :class="indexSingleChat == active ? 'active': ''" :class=" contact.visible == true ? '': 'not-visible' "  @click="active = indexSingleChat">
                                             <div class="avatar">
                                                 <img :src=" 'img/avatar' + contact.avatar + '.jpg'"  :alt="contact.name">
                                                 <div class="info-avatar">

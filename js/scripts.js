@@ -212,6 +212,20 @@ createApp({
             this.contacts[active].messages.push(newAnswer);          
 
         },
+        searchContacts: function (active) {
+            if (this.contacts[active].name.includes(this.inputSearch) == true) {
+
+                this.visible = true;
+                console.log('Questo visible è true')
+                return this.visible = true;
+            }
+            else {
+
+                this.visible = false;
+                console.log('Questo visible è false')
+                return this.visible = false;
+            }
+        }
 
     }
 }).mount('#app')
