@@ -173,7 +173,9 @@ createApp({
 
                     ],
                 },
-            ] 
+            ],
+            // Prova per tenere traccia del numero di oggetti di array messages prima dell'aggiunta dell'input
+            // messagesNumber: this.contacts[this.active].messages.length,
         }
 
 
@@ -187,9 +189,14 @@ createApp({
                 status: 'sent'
             }
 
-           this.contacts[active].messages.push(newMessage);
+            this.contacts[active].messages.push(newMessage);
 
-        }
+        },
+        // addAnswer: function (active) {
+
+        //     if ()
+
+        // }
     }
 }).mount('#app')
 
