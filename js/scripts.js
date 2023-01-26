@@ -174,8 +174,6 @@ createApp({
                     ],
                 },
             ],
-            // Prova per tenere traccia del numero di oggetti di array messages prima dell'aggiunta dell'input
-            // messagesNumber: this.contacts[this.active].messages.length,
         }
 
 
@@ -189,14 +187,33 @@ createApp({
                 status: 'sent'
             }
 
+
+            // Push 
             this.contacts[active].messages.push(newMessage);
 
+
+            // Dopo 1 secondo aggiungi un altro oggetto all'array messages OK
+            setTimeout (function () {
+                const miaFunzione = this.prova ();
+            }, 1000);
+
+
+
         },
-        // addAnswer: function (active) {
+        addAnswer: function (active) {
 
-        //     if ()
+            const newAnswer = {
+                date: '10/01/2020 15:51:00',
+                message: 'Ok',
+                status: 'received'
+            }
 
-        // }
+            this.contacts[active].messages.push(newAnswer);          
+
+        },
+        prova: function () {
+            return alert('Ciao');
+        }
     }
 }).mount('#app')
 
