@@ -212,19 +212,63 @@ createApp({
             this.contacts[active].messages.push(newAnswer);          
 
         },
-        checkVisibility: function (contact) {
+        // checkVisibility: function (contact) {
 
             
-            if (contact.name.includes(this.inputSearch) == true) {
+        //     if (contact.name.includes(this.inputSearch) == true) {
 
-                return this.visible = true;
+        //         return this.visible = true;
+        //     }
+        //     else {
+
+        //         return this.visible = false;
+        //     }
+        // }
+
+    },
+    computed: {
+        
+        getName (active) {
+
+            // Creo array di tutti i nomi 
+            const arrayNomi = [];
+            
+
+            for (let i = 0; i < this.contacts.length; i++) {
+
+                arrayNomi.push(this.contacts[i].name);
+
+
+
+            }
+
+            console.log(arrayNomi);
+
+            // Se inputSearch è uguale a vuoto, allora cicla tutto l'array di nomi - altrimenti cicla l'array filtrato
+            // Dove lo ciclo? Dovrei ciclarlo in v-for del singolo contatto (tag <li>)
+            if (this.inputSearch == '') {
+
+                for (let i = 0; i < arrayNomi.length; i++) {
+
+                return arrayNomi[i];
+    
+                }
+                
             }
             else {
+                const arrayFiltrato = arrayNomi.filter(name => name.includes(this.inputSearch));
+                
+                for (let i = 0; i < arrayFiltrato.length; i++) {
 
-                return this.visible = false;
+                    return arrayFiltrato[i];
+        
+                }
+
             }
-        }
+     
+            
 
+        }
     }
 }).mount('#app')
 

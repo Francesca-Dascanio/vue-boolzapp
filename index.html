@@ -57,20 +57,20 @@
                                 </div>
                             </div>
                             <div id="search">
-                                <input type="search" placeholder="Cerca o inizia una nuova chat" v-model="inputSearch" @onchange="checkVisibility(contact)">
-                                <!-- Prova con evento onchange su input: @onchange="checkVisibility(contact)" -->
+                                <input type="search" placeholder="Cerca o inizia una nuova chat" v-model="inputSearch">
+                                <!-- Prova vecchia con evento onchange su input: @onchange="checkVisibility(contact)" -->
                             </div>
                             <div id="list-contacts">
                                 <ul>
-                                                                                                                                                                         <!-- Se oggetto di contacts ha proprietà visible uguale a false aggiungere classe not-visible -->
-                                    <li v-for="(contact, indexSingleChat) in contacts" :class="indexSingleChat == active ? 'active': ''" @click="active = indexSingleChat"  :class="contact.visible == true ? '' : 'not-visible'" >
+                                    <!--Prova vecchia con aggiunta :class="contact.visible == true ? '' : 'not-visible'" -->
+                                    <li v-for="(contact, indexSingleChat) in contacts" :class="indexSingleChat == active ? 'active': ''" @click="active = indexSingleChat">
                                         <hr>
                                         <div class="single-chat">
                                             <div class="avatar">
                                                 <img :src=" 'img/avatar' + contact.avatar + '.jpg'"  :alt="contact.name">
                                                 <div class="info-avatar">
                                                     <div class="avatar-name">
-                                                        {{ contact.name }}
+                                                        {{ getName }}
                                                     </div>
                                                     <div class="avatar-message">
                                                         Ultimo messaggio
