@@ -4,6 +4,7 @@ createApp({
 
     data() {
         return {
+            inputSearch: '',
             inputText: '',
             active: 0,
             contacts: [

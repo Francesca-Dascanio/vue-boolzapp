@@ -57,7 +57,7 @@
                                 </div>
                             </div>
                             <div id="search">
-                                <input type="search" placeholder="Cerca o inizia una nuova chat">
+                                <input type="search" placeholder="Cerca o inizia una nuova chat" v-model="inputSearch">
                             </div>
                             <div id="list-contacts">
                                 <ul>
@@ -65,7 +65,7 @@
                                         <hr>
                                         <div class="single-chat" v-for="(contact, indexSingleChat) in contacts" :class="indexSingleChat == active ? 'active': ''" @click="active = indexSingleChat">
                                             <div class="avatar">
-                                                <img :src=" 'img/avatar' + contact.avatar + '.jpg'"  :alt="contacts[indexSingleChat]">
+                                                <img :src=" 'img/avatar' + contact.avatar + '.jpg'"  :alt="contact.name">
                                                 <div class="info-avatar">
                                                     <div class="avatar-name">
                                                         {{ contact.name }}
@@ -131,14 +131,6 @@
                                     </div>
                                 </div>
 
-                                <!-- <div class="message-container received">
-                                    <div class="message-content">
-                                        message
-                                    </div>
-                                    <div class="time">
-                                        time
-                                    </div>
-                                </div> -->
                                 
                             </div>
                         </main>
