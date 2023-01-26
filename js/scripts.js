@@ -228,7 +228,7 @@ createApp({
     },
     computed: {
         
-        getName (active) {
+        getName () {
 
             // Creo array di tutti i nomi 
             const arrayNomi = [];
@@ -238,34 +238,29 @@ createApp({
 
                 arrayNomi.push(this.contacts[i].name);
 
-
-
             }
 
             console.log(arrayNomi);
 
-            // Se inputSearch è uguale a vuoto, allora cicla tutto l'array di nomi - altrimenti cicla l'array filtrato
-            // Dove lo ciclo? Dovrei ciclarlo in v-for del singolo contatto (tag <li>)
-            if (this.inputSearch == '') {
+            // Faccio ciclare arrayNomi; se inputSearch è vuoto allora restituisci tutti i nomi dell'array
+            // Altrimenti restituisci array Filtrato
+            for (let i = 0; i < arrayNomi.length; i++) {
 
-                for (let i = 0; i < arrayNomi.length; i++) {
-
-                return arrayNomi[i];
-    
+                if (this.inputSearch == '') {
+                   console.log(arrayNomi[i]);
+                   return arrayNomi[i];
                 }
-                
-            }
-            else {
-                const arrayFiltrato = arrayNomi.filter(name => name.includes(this.inputSearch));
-                
-                for (let i = 0; i < arrayFiltrato.length; i++) {
+                else {
 
-                    return arrayFiltrato[i];
+                    const arrayFiltrato = arrayNomi.filter(name => name.includes(this.inputSearch));
+                
+                    for (let i = 0; i < arrayFiltrato.length; i++) {
+
+                    console.log(arrayFiltrato[i]);
         
                 }
-
+                }
             }
-     
             
 
         }
