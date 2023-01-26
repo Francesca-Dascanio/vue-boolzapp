@@ -193,8 +193,9 @@ createApp({
 
 
             // Dopo 1 secondo aggiungi un altro oggetto all'array messages OK
-            setTimeout (function () {
-                const miaFunzione = this.prova ();
+            // setTimeout (this.prova, 1000);
+            setTimeout (() => {
+                this.addAnswer(active)
             }, 1000);
 
 
@@ -211,9 +212,7 @@ createApp({
             this.contacts[active].messages.push(newAnswer);          
 
         },
-        prova: function () {
-            return alert('Ciao');
-        }
+
     }
 }).mount('#app')
 
