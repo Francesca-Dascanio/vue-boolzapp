@@ -209,7 +209,8 @@ createApp({
                     // date: this.dt.now().c.hour + ':' + this.dt.now().c.minute,
                     date: this.dt.now().toLocaleString(this.dt.DATETIME_SHORT_WITH_SECONDS),
                     message: this.inputText,
-                    status: 'sent'
+                    status: 'sent',
+                    dropdown: false
                 }
 
                 // Push 
@@ -231,19 +232,20 @@ createApp({
                 // date: this.dt.now().c.hour + ':' + this.dt.now().c.minute,
                 date: this.dt.now().toLocaleString(this.dt.DATETIME_SHORT_WITH_SECONDS),
                 message: 'Ok',
-                status: 'received'
+                status: 'received',
+                dropdown: false
             }
 
             this.contacts[active].messages.push(newAnswer);          
 
         },
-        deleteMessage: function (active) {
+        deleteMessage: function (active, indexMessage) {
 
                 // Errore nell'intercettare proprio quello specifico messaggio tramite indice dell'array
                 // Problema: non mi riconosce indexMessage come indice dell'array messages - ma lo vede come un oggetto di messages.
-                //  console.log(indexMessage);
+                 console.log(indexMessage);
 
-                this.contacts[active].messages.splice(0, 1);
+                this.contacts[active].messages.splice(indexMessage, 1);
 
                
 

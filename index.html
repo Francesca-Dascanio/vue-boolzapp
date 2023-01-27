@@ -124,11 +124,11 @@
                         <main>
                             <div class="conversation-container">
                                 <!-- singolo messaggio -->
-                                <div class="message-container" v-for="(element, indexMessage) in contacts[active].messages" :class="element.status == 'sent' ? 'sent' : 'received' " @click="indexMessage = currentMessage">
+                                <div class="message-container" v-for="(element, indexMessage) in contacts[active].messages" :class="element.status == 'sent' ? 'sent' : 'received' ">
                                     <div class="message-content">
                                         <div>
                                             <i class="fa-solid fa-chevron-down fa-2xs" @click="element.dropdown = true"></i>
-                                            <div class="dropdown" :class="{'not-visible': element.dropdown == false}" @click="deleteMessage(active, element)">
+                                            <div class="dropdown" :class="{'not-visible': element.dropdown == false}" @click="deleteMessage(active, indexMessage)">
                                                 Delete message
                                             </div>
                                         </div>
