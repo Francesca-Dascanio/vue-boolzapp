@@ -236,10 +236,13 @@ createApp({
             this.contacts[active].messages.push(newAnswer);          
 
         },
-        deleteMessage: function (active) {
+        deleteMessage: function (active, element) {
 
-            // Errore nell'intercettare proprio quello specifico messaggio
-            this.contacts[active].messages.splice(active, 1);
+            if (element.dropdown == true) {
+                // Errore nell'intercettare proprio quello specifico messaggio
+                this.contacts[active].messages.splice(element);
+            }
+            
 
 
         }

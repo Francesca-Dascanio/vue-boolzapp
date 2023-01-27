@@ -128,7 +128,7 @@
                                     <div class="message-content">
                                         <div>
                                             <i class="fa-solid fa-chevron-down fa-2xs" @click="element.dropdown = true"></i>
-                                            <div class="dropdown" :class="{'not-visible': element.dropdown == false}" @click="deleteMessage(active)">
+                                            <div class="dropdown" :class="{'not-visible': element.dropdown == false}" @click="deleteMessage(active, element, indexMessage)">
                                                 Delete message
                                             </div>
                                         </div>
