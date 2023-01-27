@@ -4,6 +4,7 @@ createApp({
 
     data() {
         return {
+            currentMessage: 0,
             dt: null,
             inputSearch: '',
             inputText: '',
@@ -236,14 +237,15 @@ createApp({
             this.contacts[active].messages.push(newAnswer);          
 
         },
-        deleteMessage: function (active, element) {
+        deleteMessage: function (active) {
 
-            if (element.dropdown == true) {
-                // Errore nell'intercettare proprio quello specifico messaggio
-                this.contacts[active].messages.splice(element);
-            }
-            
+                // Errore nell'intercettare proprio quello specifico messaggio tramite indice dell'array
+                // Problema: non mi riconosce indexMessage come indice dell'array messages - ma lo vede come un oggetto di messages.
+                //  console.log(indexMessage);
 
+                this.contacts[active].messages.splice(0, 1);
+
+               
 
         }
     },
