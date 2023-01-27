@@ -194,7 +194,8 @@ createApp({
                 // Push 
             this.contacts[active].messages.push(newMessage);
 
-
+            this.inputText = '';
+            
             // Dopo 1 secondo aggiungi un altro oggetto all'array messages OK
             // setTimeout (this.prova, 1000);
             setTimeout (() => {
