@@ -241,15 +241,8 @@ createApp({
         },
         deleteMessage: function (active, indexMessage) {
 
-                // Errore nell'intercettare proprio quello specifico messaggio tramite indice dell'array
-                // Problema: non mi riconosce indexMessage come indice dell'array messages - ma lo vede come un oggetto di messages.
-                 console.log(indexMessage);
-
                 this.contacts[active].messages.splice(indexMessage, 1);
-
-               
-
-        }
+        },
     },
     computed: {
 
@@ -262,6 +255,16 @@ createApp({
             
 
         },
+        // lastDate () {
+        //     // Da modificare
+        //     // this.contacts[active].messages[this.messages.length - 1].date;
+        //     // if(this.messages.length - 1) {
+        //     //     return this.messages[this.messages.length].date;
+        //     // }
+        //     // return this.date
+            
+
+        // },
         // dateVisualization (element) {
 
         //     // console.log(this.messages.date = this.dt.toLocaleString(DateTime.TIME_24_SIMPLE));
