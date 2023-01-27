@@ -1,11 +1,10 @@
-// import { DateTime } from "luxon";
-
 const { createApp} = Vue;
 
 createApp({
 
     data() {
         return {
+            dt: null,
             inputSearch: '',
             inputText: '',
             active: 0,
@@ -195,7 +194,7 @@ createApp({
             this.contacts[active].messages.push(newMessage);
 
             this.inputText = '';
-            
+
             // Dopo 1 secondo aggiungi un altro oggetto all'array messages OK
             // setTimeout (this.prova, 1000);
             setTimeout (() => {
@@ -226,7 +225,9 @@ createApp({
             return this.contacts
 
         }
-
+    },
+    mounted() {
+        this.dt = luxon.DateTime;
     }
 }).mount('#app')
 
