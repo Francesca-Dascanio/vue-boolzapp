@@ -255,16 +255,13 @@ createApp({
             
 
         },
-        // lastDate () {
-        //     // Da modificare
-        //     // this.contacts[active].messages[this.messages.length - 1].date;
-        //     // if(this.messages.length - 1) {
-        //     //     return this.messages[this.messages.length].date;
-        //     // }
-        //     // return this.date
-            
+        lastDate (active) {
+            // Da modificare
 
-        // },
+            return this.contacts[active].messages[this.messages.length - 1].date
+           
+
+        },
         // dateVisualization (element) {
 
         //     // console.log(this.messages.date = this.dt.toLocaleString(DateTime.TIME_24_SIMPLE));
