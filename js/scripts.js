@@ -185,7 +185,7 @@ createApp({
 
             if (this.inputText != '') {
                 const newMessage = {
-                    date: '10/01/2020 15:51:00',
+                    date: this.dt.now().c.hour + ':' + this.dt.now().c.minute,
                     message: this.inputText,
                     status: 'sent'
                 }
@@ -206,7 +206,7 @@ createApp({
         addAnswer: function (active) {
 
             const newAnswer = {
-                date: '10/01/2020 15:51:00',
+                date: this.dt.now().c.hour + ':' + this.dt.now().c.minute,
                 message: 'Ok',
                 status: 'received'
             }
