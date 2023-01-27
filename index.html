@@ -126,7 +126,15 @@
                                 <!-- singolo messaggio -->
                                 <div class="message-container" v-for="(element, indexMessage) in contacts[active].messages" :class="element.status == 'sent' ? 'sent' : 'received' ">
                                     <div class="message-content">
-                                        {{ element.message }}
+                                        <div>
+                                            <i class="fa-solid fa-chevron-down fa-2xs" @click="element.dropdown = true"></i>
+                                            <div class="dropdown" :class="{'not-visible': element.dropdown == false}" @click="deleteMessage(active)">
+                                                Delete message
+                                            </div>
+                                        </div>
+                                        <div>
+                                            {{ element.message }}
+                                        </div>
                                     </div>
                                     <div class="time">
                                         {{ element.date }}

@@ -279,6 +279,42 @@ main #section-2 {
 #section-2 main .conversation-container .message-container .message-content {
     padding: 0.5rem 0.5rem 0 0.5rem;
     min-width: 200px;
+    position: relative;
+}
+
+#section-2 main .conversation-container .message-container .message-content div:first-child {
+    text-align: right;
+    color: var(--color-icon);
+}
+
+#section-2 main .conversation-container .message-container .message-content div:last-child {
+    margin-bottom: 0.3rem;
+    margin-right: 10px;
+}
+
+.dropdown {
+    width: 150px;
+    height: 40px;
+    border-radius: 5px;
+    -webkit-box-shadow: 3px 3px 33px -2px rgba(0, 0, 0, 0.24);
+    -moz-box-shadow: 3px 3px 33px -2px rgba(0, 0, 0, 0.24);
+    box-shadow: 3px 3px 33px -2px rgba(0, 0, 0, 0.24);
+    background-color: var(--bg-white);
+    position: absolute;
+    top: 25px;
+    right: -3px;
+    z-index: 3;
+    text-align: center;
+    padding-top: 10px;
+}
+
+.not-visible {
+    display: none;
+}
+
+.red {
+    color: red;
+    font-weight: bold;
 }
 
 
