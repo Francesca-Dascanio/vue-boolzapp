@@ -1,3 +1,5 @@
+// import { DateTime } from "luxon";
+
 const { createApp} = Vue;
 
 createApp({
@@ -211,20 +213,7 @@ createApp({
 
             this.contacts[active].messages.push(newAnswer);          
 
-        },
-        // checkVisibility: function (contact) {
-
-            
-        //     if (contact.name.includes(this.inputSearch) == true) {
-
-        //         return this.visible = true;
-        //     }
-        //     else {
-
-        //         return this.visible = false;
-        //     }
-        // }
-
+        }
     },
     computed: {
 
