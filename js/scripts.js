@@ -185,7 +185,8 @@ createApp({
 
             if (this.inputText != '') {
                 const newMessage = {
-                    date: this.dt.now().c.hour + ':' + this.dt.now().c.minute,
+                    // date: this.dt.now().c.hour + ':' + this.dt.now().c.minute,
+                    date: this.dt.now().toLocaleString(this.dt.DATETIME_SHORT_WITH_SECONDS),
                     message: this.inputText,
                     status: 'sent'
                 }
@@ -206,7 +207,8 @@ createApp({
         addAnswer: function (active) {
 
             const newAnswer = {
-                date: this.dt.now().c.hour + ':' + this.dt.now().c.minute,
+                // date: this.dt.now().c.hour + ':' + this.dt.now().c.minute,
+                date: this.dt.now().toLocaleString(this.dt.DATETIME_SHORT_WITH_SECONDS),
                 message: 'Ok',
                 status: 'received'
             }
@@ -223,12 +225,19 @@ createApp({
                 return this.contacts.filter((contact) => contact.name.toLowerCase().includes(this.inputSearch))
             }
             return this.contacts
+            
 
-        }
+        },
+        // dateVisualization (element) {
+
+        //     // console.log(this.messages.date = this.dt.toLocaleString(DateTime.TIME_24_SIMPLE));
+        //     return this.messages.date = this.date.toLocaleString(DateTime.TIME_24_SIMPLE);
+
+        // }
     },
     mounted() {
         this.dt = luxon.DateTime;
-    }
+    },
 }).mount('#app')
 
 
