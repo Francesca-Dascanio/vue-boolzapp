@@ -260,6 +260,24 @@ createApp({
 
             return myFormatDate.slice(11, 16);
 
+        },
+        getlastMessage: function (contact) {
+
+            const myNewMessages = contact.messages;
+            console.log(myNewMessages);
+
+            const myMessage = myNewMessages[myNewMessages.length - 1].message;
+
+            let reducedMessage = myMessage;
+
+            if (reducedMessage.length > 30) {
+                return reducedMessage = myMessage.substring(0, 40) + '...';
+            }
+            else {
+                return reducedMessage = myMessage.substring(0, 40);
+            }
+
+
         }
     },
     computed: {
