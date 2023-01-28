@@ -206,7 +206,6 @@ createApp({
 
             if (this.inputText != '') {
                 const newMessage = {
-                    // date: this.dt.now().c.hour + ':' + this.dt.now().c.minute,
                     date: this.dt.now().toLocaleString(this.dt.DATETIME_SHORT_WITH_SECONDS),
                     message: this.inputText,
                     status: 'sent',
@@ -218,8 +217,6 @@ createApp({
 
             this.inputText = '';
 
-            // Dopo 1 secondo aggiungi un altro oggetto all'array messages OK
-            // setTimeout (this.prova, 1000);
             setTimeout (() => {
                 this.addAnswer(active)
             }, 1000);
@@ -229,7 +226,6 @@ createApp({
         addAnswer: function (active) {
 
             const newAnswer = {
-                // date: this.dt.now().c.hour + ':' + this.dt.now().c.minute,
                 date: this.dt.now().toLocaleString(this.dt.DATETIME_SHORT_WITH_SECONDS),
                 message: 'Ok',
                 status: 'received',
