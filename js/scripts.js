@@ -207,7 +207,7 @@ createApp({
             if (this.inputText != '') {
                 const newMessage = {
                     // date: this.dt.now().c.hour + ':' + this.dt.now().c.minute,
-                    date: this.dt.now().toLocaleString(this.dt.TIME_24_SIMPLE),
+                    date: this.dt.now().toLocaleString(this.dt.DATETIME_SHORT_WITH_SECONDS),
                     message: this.inputText,
                     status: 'sent',
                     dropdown: false
@@ -229,7 +229,8 @@ createApp({
         addAnswer: function (active) {
 
             const newAnswer = {
-                date: this.dt.now().toLocaleString(this.dt.TIME_24_SIMPLE),
+                // date: this.dt.now().c.hour + ':' + this.dt.now().c.minute,
+                date: this.dt.now().toLocaleString(this.dt.DATETIME_SHORT_WITH_SECONDS),
                 message: 'Ok',
                 status: 'received',
                 dropdown: false
@@ -249,14 +250,16 @@ createApp({
             return formatDate.slice(11, 16);
 
         },
-        getlastDate: function (active) {
+        getlastDate: function (contact) {
 
-            // Questo prende del contatto attivo l'array di messaggi corrispondenti
-            const myMessages = this.contacts[active].messages;
+            const myMessages = contact.messages;
+            console.log(myMessages);
+
             const myDate = myMessages[myMessages.length - 1].date;
             const myFormatDate = myDate;
 
             return myFormatDate.slice(11, 16);
+
         }
     },
     computed: {
