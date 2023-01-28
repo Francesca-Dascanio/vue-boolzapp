@@ -229,7 +229,6 @@ createApp({
         addAnswer: function (active) {
 
             const newAnswer = {
-                // date: this.dt.now().c.hour + ':' + this.dt.now().c.minute,
                 date: this.dt.now().toLocaleString(this.dt.TIME_24_SIMPLE),
                 message: 'Ok',
                 status: 'received',
@@ -249,6 +248,15 @@ createApp({
 
             return formatDate.slice(11, 16);
 
+        },
+        getlastDate: function (active) {
+
+            // Questo prende del contatto attivo l'array di messaggi corrispondenti
+            const myMessages = this.contacts[active].messages;
+            const myDate = myMessages[myMessages.length - 1].date;
+            const myFormatDate = myDate;
+
+            return myFormatDate.slice(11, 16);
         }
     },
     computed: {
@@ -261,14 +269,7 @@ createApp({
             return this.contacts
             
 
-        },
-        lastDate (active) {
-            // Da modificare
-
-            return this.contacts[active].messages[this.messages.length - 1].date
-           
-
-        },
+        }
     },
     mounted() {
         this.dt = luxon.DateTime;

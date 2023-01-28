@@ -79,7 +79,7 @@
                                             </div>
                                             <div class="message-time">
                                                 <!-- 12:00 -->
-                                                <!-- {{ lastDate(active) }} -->
+                                                {{ getlastDate(active) }}
                                             </div>
                                         </div>  
                                     </li>
@@ -138,7 +138,6 @@
                                         </div>
                                     </div>
                                     <div class="time">
-                                        <!-- {{ element.date }} -->
                                         {{ changeFormatDate (element) }}
                                     </div>
                                 </div>
@@ -151,9 +150,7 @@
                                 <i class="fa-regular fa-face-smile"></i>
                             </div>
                             <div class="write-message">
-                                <!-- <form action="" @submit.prevent="addInput(active)"> -->
                                     <input type="text" placeholder="Scrivi un messaggio" v-model="inputText" @keyup.enter="addInput(active)">
-                                <!-- </form> -->
                             </div>
                             <div>
                                 <i class="fa-solid fa-microphone"></i>
