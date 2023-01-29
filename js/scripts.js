@@ -249,7 +249,7 @@ createApp({
         getlastDate: function (contact) {
 
             const myMessages = contact.messages;
-            console.log(myMessages);
+            
 
             const myDate = myMessages[myMessages.length - 1].date;
             const myFormatDate = myDate;
@@ -260,7 +260,7 @@ createApp({
         getlastMessage: function (contact) {
 
             const myNewMessages = contact.messages;
-            console.log(myNewMessages);
+            
 
             const myMessage = myNewMessages[myNewMessages.length - 1].message;
 
@@ -281,7 +281,10 @@ createApp({
         // Non funziona caseSensitive
         contactsList () {
             if(this.inputSearch.length > 0) {
+
+                console.log(this.contacts.filter((contact) => contact.name.toLowerCase().includes(this.inputSearch)))
                 return this.contacts.filter((contact) => contact.name.toLowerCase().includes(this.inputSearch))
+                
             }
             return this.contacts
             
