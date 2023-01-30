@@ -6,6 +6,7 @@ createApp({
         return {
             currentMessage: 0,
             dt: null,
+            inputMessages: '',
             inputSearch: '',
             inputText: '',
             active: 0,
@@ -274,6 +275,22 @@ createApp({
             }
 
 
+        },
+        searchMessages: function () {
+
+            // Prendi sezione 2 e riduci la larghezza a 40%.
+            document.getElementById('section-2').style.width = '40%';
+
+            // Al click togliere dalla sezione 3 la classe not-visible
+            document.getElementById('section-3').classList.remove('not-visible');
+        },
+        closeSearchMessages: function () {
+
+            // Prendi sezione 2 e ripristina la larghezza a 70%.
+            document.getElementById('section-2').style.width = '70%';
+
+            // Al click aggiungi dalla sezione 3 la classe not-visible
+            document.getElementById('section-3').classList.add('not-visible');
         }
     },
     computed: {
@@ -294,8 +311,34 @@ createApp({
                 
             }
             return this.contacts
-            
+        },
+        messagesList () {
 
+            // Manca solo caseSensitive
+            if(this.inputMessages.length > 0) {
+
+                const arrayMessage = [];
+
+                for (let i = 0; i < this.contacts[this.active].messages.length; i++) {
+
+                    arrayMessage.push(this.contacts[this.active].messages[i].message);
+                }
+
+                const arrayFiltrato = arrayMessage.filter((sentence) => sentence.includes(this.inputMessages));
+
+
+                for (let i = 0; i < arrayFiltrato.length; i++) {
+
+                    return arrayFiltrato[i];
+                }
+ 
+            } 
+            else {
+                // Non succede nulla
+            }  
+        },
+        dateList () {
+            
         }
     },
     mounted() {

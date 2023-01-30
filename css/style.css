@@ -31,6 +31,10 @@
     background-color: rgba(0, 0, 0, 0.1);
 }
 
+.not-visible {
+    display: none;
+}
+
 
 
 /* REGOLE MAIN */
@@ -59,7 +63,10 @@ main #section-1 {
 
 main #section-2 {
     width: 70%;
-    background-color: lightcoral;
+}
+
+main #section-3 {
+    width: 30%;
 }
 
 /* REGOLE SEZIONE 1 */
@@ -308,16 +315,6 @@ main #section-2 {
     padding-top: 10px;
 }
 
-.not-visible {
-    display: none;
-}
-
-.red {
-    color: red;
-    font-weight: bold;
-}
-
-
 
 #section-2 main .conversation-container .message-container .time {
     text-align: right;
@@ -366,4 +363,60 @@ main #section-2 {
     border-radius: 4px;
     padding: 1rem;
     background-color: var(--bg-white);
+}
+
+/* REGOLE SEZIONE 3 */
+/* Header */
+#section-3 header {
+    width: 100%;
+    height: 80px;
+    background-color: var(--color-header);
+    padding: 1rem;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+#section-3 header span {
+    padding-right: 1rem;
+}
+
+/* Main */
+#section-3 main {
+    height: calc(100% - 80px);
+}
+
+
+/* Main - search message */
+#section-3 main #search-message {
+    padding: 1rem;
+    height: 80px;
+}
+
+#section-3 main #search-message input {
+    display: block;
+    padding: 9px 4px 9px 40px;
+    width: 100%;
+    background: transparent url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' class='bi bi-search' viewBox='0 0 16 16'%3E%3Cpath d='M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z'%3E%3C/path%3E%3C/svg%3E") no-repeat 13px center;
+    border: 1px solid var(--bg-color-message);
+    border-radius: 4px;
+}
+
+
+#section-3 main #list-messages ul {
+    list-style: none;
+}
+
+
+#section-3 main #list-messages ul li .time-message {
+    font-size: 0.8rem;
+    color: var(--color-icon);
+    padding-left: 1rem;
+}
+
+#section-3 main #list-messages ul li .searched-message {
+    font-size: 0.8rem;
+    padding-top: 0.2rem;
+    padding-left: 1rem;
+    color: var(--color-icon);
 }

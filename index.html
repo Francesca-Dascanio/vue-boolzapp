@@ -105,7 +105,7 @@
                             
                             <div id="conversation-actions">
                                 <ul>
-                                    <li>
+                                    <li @click="searchMessages">
                                         <a href="#">
                                             <i class="fa-solid fa-magnifying-glass"></i>
                                         </a>
@@ -157,6 +157,37 @@
                                 <i class="fa-solid fa-microphone"></i>
                             </div>
                         </footer>
+                    </section>
+
+                    <section id="section-3" class="not-visible">
+                        <header>
+                            <span @click="closeSearchMessages()">
+                                <i class="fa-solid fa-xmark"></i>
+                            </span>
+                            <span>
+                                Cerca messaggio
+                            </span>
+                        </header>
+                        <main>
+                            <div id="search-message">
+                                <input type="search" placeholder="Cerca messaggio in questa chat" v-model="inputMessages">
+                            </div>
+
+                            <div id="list-messages">
+                                <ul>
+                                    <li>
+                                        <div class="single-message">
+                                            <div class="time-message">
+                                                12:00
+                                            </div>
+                                            <div class="searched-message">
+                                                {{ messagesList }}
+                                            </div>
+                                        </div>
+                                    </li>
+                                </ul>
+                            </div>
+                        </main>
                     </section>
                 </main>
             </div>
