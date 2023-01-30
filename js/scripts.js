@@ -338,7 +338,36 @@ createApp({
             }  
         },
         dateList () {
-            
+            if(this.inputMessages.length > 0) {
+
+                const arrayMessages = [];                
+                
+                const arrayDates = [];
+
+                for (let i = 0; i < this.contacts[this.active].messages.length; i++) {
+
+                    arrayMessages.push(this.contacts[this.active].messages[i].message);
+
+                    arrayDates.push(this.contacts[this.active].messages[i].date);
+                    
+                }
+
+
+                console.log(arrayDates, arrayMessages);
+
+                const arrayFiltratoDue = arrayMessages.filter((sentence) => sentence.includes(this.inputMessages));
+
+
+                for (let i = 0; i < arrayFiltratoDue.length; i++) {
+
+                    
+                    return arrayDates[i].slice(11, 16);
+                }
+ 
+            } 
+            else {
+                // Non succede nulla
+            }  
         }
     },
     mounted() {
