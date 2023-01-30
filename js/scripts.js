@@ -278,7 +278,7 @@ createApp({
     },
     computed: {
 
-        // Non funziona caseSensitive
+        // Funziona filtro solo con lowerCase
         contactsList () {
             if(this.inputSearch.length > 0) {
 
