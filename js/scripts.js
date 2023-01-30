@@ -278,12 +278,19 @@ createApp({
     },
     computed: {
 
-        // Funziona filtro solo con lowerCase
         contactsList () {
             if(this.inputSearch.length > 0) {
 
-                console.log(this.contacts.filter((contact) => contact.name.toLowerCase().includes(this.inputSearch)))
-                return this.contacts.filter((contact) => contact.name.toLowerCase().includes(this.inputSearch))
+                // Soluzione con problema lowerCase perchè associato a contact.name
+                // return this.contacts.filter((contact) => contact.name.toLowerCase().includes(this.inputSearch))
+
+                // Soluzione senza problema toLowerCase
+                return this.contacts.filter((contact) => {
+                return this.inputSearch
+                .toLowerCase()
+                .split(" ")
+                .every((v) => contact.name.toLowerCase().includes(v));
+                })
                 
             }
             return this.contacts
