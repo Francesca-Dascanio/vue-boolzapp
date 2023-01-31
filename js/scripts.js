@@ -324,7 +324,14 @@ createApp({
                     arrayMessage.push(this.contacts[this.active].messages[i].message);
                 }
 
-                const arrayFiltrato = arrayMessage.filter((sentence) => sentence.includes(this.inputMessages));
+                // const arrayFiltrato = arrayMessage.filter((sentence) => sentence.includes(this.inputMessages));
+
+                const arrayFiltrato = arrayMessage.filter((sentence) => {
+                    return this.inputMessages
+                    .toLowerCase()
+                    .split(" ")
+                    .every((v) => sentence.toLowerCase().includes(v));
+                    })
 
 
                 for (let i = 0; i < arrayFiltrato.length; i++) {
@@ -352,15 +359,23 @@ createApp({
                     
                 }
 
+                console.log(arrayDates);
 
-                console.log(arrayDates, arrayMessages);
+                // const arrayFiltratoDue = arrayMessages.filter((sentence) => sentence.includes(this.inputMessages));
 
-                const arrayFiltratoDue = arrayMessages.filter((sentence) => sentence.includes(this.inputMessages));
+                // Questo è array filtrato dei messaggi
+                const arrayFiltratoDue = arrayMessages.filter((sentence) => {
+                    return this.inputMessages
+                    .toLowerCase()
+                    .split(" ")
+                    .every((v) => sentence.toLowerCase().includes(v));
+                    })
+
+                console.log(arrayFiltratoDue);
 
 
                 for (let i = 0; i < arrayFiltratoDue.length; i++) {
 
-                    
                     return arrayDates[i].slice(11, 16);
                 }
  
