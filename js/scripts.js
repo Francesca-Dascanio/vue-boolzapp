@@ -1,10 +1,12 @@
 const { createApp} = Vue;
 
-createApp({
-
+createApp( {
+    
     data() {
         return {
-            currentMessage: 0,
+            // currentMessage: 0,
+            arrayMessages: [],
+            arrayDates: [],
             dt: null,
             inputMessages: '',
             inputSearch: '',
@@ -291,7 +293,7 @@ createApp({
 
             // Al click aggiungi dalla sezione 3 la classe not-visible
             document.getElementById('section-3').classList.add('not-visible');
-        }
+        },   
     },
     computed: {
 
@@ -314,80 +316,40 @@ createApp({
         },
         messagesList () {
 
-            // Manca solo caseSensitive
             if(this.inputMessages.length > 0) {
 
                 const arrayMessage = [];
 
                 for (let i = 0; i < this.contacts[this.active].messages.length; i++) {
 
-                    arrayMessage.push(this.contacts[this.active].messages[i].message);
+                    const object = {
+                        message: this.contacts[this.active].messages[i].message,
+                        date: this.contacts[this.active].messages[i].date
+                    }
+
+                    arrayMessage.push(object);
                 }
 
-                // const arrayFiltrato = arrayMessage.filter((sentence) => sentence.includes(this.inputMessages));
+                console.log(arrayMessage);
 
-                const arrayFiltrato = arrayMessage.filter((sentence) => {
+                const arrayFiltrato = (arrayMessage.filter((object) => {
                     return this.inputMessages
                     .toLowerCase()
                     .split(" ")
-                    .every((v) => sentence.toLowerCase().includes(v));
-                    })
+                    .every((v) => object.message.toLowerCase().includes(v));
+                    }));
 
+                console.log(arrayFiltrato);
+                return arrayFiltrato;
 
-                for (let i = 0; i < arrayFiltrato.length; i++) {
-
-                    return arrayFiltrato[i];
-                }
- 
-            } 
-            else {
-                // Non succede nulla
-            }  
-        },
-        dateList () {
-            if(this.inputMessages.length > 0) {
-
-                const arrayMessages = [];                
                 
-                const arrayDates = [];
-
-                for (let i = 0; i < this.contacts[this.active].messages.length; i++) {
-
-                    arrayMessages.push(this.contacts[this.active].messages[i].message);
-
-                    arrayDates.push(this.contacts[this.active].messages[i].date);
-                    
-                }
-
-                console.log(arrayDates);
-
-                // const arrayFiltratoDue = arrayMessages.filter((sentence) => sentence.includes(this.inputMessages));
-
-                // Questo è array filtrato dei messaggi
-                const arrayFiltratoDue = arrayMessages.filter((sentence) => {
-                    return this.inputMessages
-                    .toLowerCase()
-                    .split(" ")
-                    .every((v) => sentence.toLowerCase().includes(v));
-                    })
-
-                console.log(arrayFiltratoDue);
-
-
-                for (let i = 0; i < arrayFiltratoDue.length; i++) {
-
-                    return arrayDates[i].slice(11, 16);
-                }
- 
-            } 
-            else {
-                // Non succede nulla
-            }  
-        }
+            }
+        },
     },
     mounted() {
         this.dt = luxon.DateTime;
     },
-}).mount('#app')
+}
+).mount('#app')
 
 

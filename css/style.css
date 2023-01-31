@@ -412,6 +412,7 @@ main #section-3 {
     font-size: 0.8rem;
     color: var(--color-icon);
     padding-left: 1rem;
+    margin-top: 1rem;
 }
 
 #section-3 main #list-messages ul li .searched-message {
@@ -419,4 +420,5 @@ main #section-3 {
     padding-top: 0.2rem;
     padding-left: 1rem;
     color: var(--color-icon);
+    margin-bottom: 1rem;
 }

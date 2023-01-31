@@ -176,13 +176,14 @@
                             <div id="list-messages">
                                 <ul>
                                     <li>
-                                        <div class="single-message">
+                                        <div class="single-message" v-for="(info, index) in messagesList">
                                             <div class="time-message">
-                                                {{ dateList }}
+                                                {{ info.date }}
                                             </div>
                                             <div class="searched-message">
-                                                {{ messagesList }}
+                                                {{ info.message }}
                                             </div>
+                                            <hr>
                                         </div>
                                     </li>
                                 </ul>
