@@ -324,7 +324,7 @@ createApp( {
 
                     const object = {
                         message: this.contacts[this.active].messages[i].message,
-                        date: this.contacts[this.active].messages[i].date
+                        date: this.contacts[this.active].messages[i].date.slice(11, 16)
                     }
 
                     arrayMessage.push(object);
